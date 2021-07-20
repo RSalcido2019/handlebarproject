@@ -1,0 +1,15 @@
+<div>
+	<h2>Single Restaurant: {{restaurant.name}}</h2>
+	<img class="item-img" src="{{restaurant.image}}" />
+	<a class="btn" href="/restaurants">Return</a>
+
+</div>
+<div>
+	<h2>Menu: {{ restaurant.Menus.length }}</h2>
+	{{#each restaurant.Menus}} <!-- for each restaurant in restaurants, create this html -->
+			<h2>{{this.title}}</h2>
+			{{#each this.MenuItems}}
+				<h5>{{this.name}} : ${{this.price}} </h5>
+			{{/each}}
+	{{/each}}
+</div>
